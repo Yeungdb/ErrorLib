@@ -7,7 +7,7 @@ authors = ["Cody Auch <codyaauch@gmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.10"
 psycopg2 = "^2.9.3"
-pytermgui = "^6.1.0"
+textual = "^0.1.18"
 unittest = "^0.0"
 
 [tool.poetry.dev-dependencies]
