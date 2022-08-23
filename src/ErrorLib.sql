@@ -12,6 +12,7 @@ CREATE TABLE IF NOT EXISTS "ErrorLog" (
     "ErrorLogIndex" SERIAL NOT NULL PRIMARY KEY,
     "CurrentTime" DATE,
     "AppWhereErrorOccurred" TEXT,
+    "Error" INTEGER REFERENCES "Error",
     "ServerName" TEXT,
     "CodeWhereErrorFailed" TEXT,
     "VariableNameArray" TEXT,
