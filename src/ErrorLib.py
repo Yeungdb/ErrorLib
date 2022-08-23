@@ -33,15 +33,15 @@ class ErrorLib:
         # Connect to the database
         self.conn = ErrDBConn(db_name, db_username, db_password, db_host, db_port)
 
-        # Create an instance of the UI
-        # ui = ErrUI()
+    def log_error(self, app_name, err_name, server_name, err_location, var_names, var_vals):
 
-        # Start the UI
-        # ui.start_ui()
+        # Insert the error into the ErrorLog
+        self.conn.insert_into_error_log(app_name, err_name, server_name, err_location, var_names, var_vals)
+        
+        # Return a message
+        msg = self.conn.get_user_message_from_error_name(err_name)
 
-    def error(ErrorTag, variableNameArray, variableValueArray):
-        print("error logged")
-        # log the error and return a message
+        return msg
 
     def __del__(self):
         # Close the db connection
