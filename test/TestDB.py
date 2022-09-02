@@ -6,8 +6,6 @@ class TestDB():
         # Create a connection to the test db
         self.conn = EDBConn("testdb", "", "")
 
-        print("Connection to DB successful")
-
         # Create tables as described in ErrorLib.sql
         create_tables = sql.SQL(
             "CREATE TABLE IF NOT EXISTS \"Error\" (" +
@@ -51,8 +49,5 @@ class TestDB():
             "DROP TABLE \"Users\";"
         )
         self.conn._execute_sql(drop_tables)
-
-        # Close the connection to the test db
-        print("Terminating DB connection")
 
 TestDB()
