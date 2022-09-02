@@ -29,7 +29,7 @@ class ErrDBConnector():
         # Create the insert query
         insert = sql.SQL(
             "INSERT INTO {table} VALUES ( " +
-            "DEFAULT, CURRENT_TIMESTAMP(), {app}, {server}, {err}, {code}, {name}, {value}" +
+            "DEFAULT, CURRENT_DATE, {app}, {err}, {server}, {code}, {name}, {value}" +
             ");"
         ).format(
             table=sql.Identifier("ErrorLog"),
